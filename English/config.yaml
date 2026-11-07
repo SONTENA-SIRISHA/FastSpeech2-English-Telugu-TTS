@@ -1,0 +1,10 @@
+language: English
+dataset: Svarah
+preprocess_config: English/config/preprocess.yaml
+model_config: English/config/model.yaml
+train_config: English/config/train.yaml
+training_steps_completed: 20
+checkpoint_steps:
+- 10
+- 20
+training_status: experimental

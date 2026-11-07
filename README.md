@@ -1,66 +1,64 @@
-# FastSpeech 2 – English and Telugu Text-to-Speech
+# FastSpeech 2: English and Telugu Text-to-Speech
 
 ## Project Overview
 
-This project explores the implementation and adaptation of FastSpeech 2 for English and Telugu text-to-speech (TTS).
+This project explores the implementation of FastSpeech 2 for English and Telugu text-to-speech synthesis as part of an internship assignment.
 
-The work includes dataset inspection, text preprocessing, model configuration, experimental English training, and inference testing.
+The implementation is based on the FastSpeech 2 reference repository by ming024.
 
-## Technologies
-
-- Python
-- PyTorch
-- FastSpeech 2
-- HiFi-GAN
-- NumPy
-- Librosa
-- Matplotlib
-
-## Project Structure
-
-'''text
-FastSpeech2-English-Telugu-TTS/
-├── English/
-│   ├── train.py
-│   ├── preprocess.py
-│   ├── inference.py
-│   ├── config.yaml
-│   └── checkpoints/
-├── Telugu/
-│   ├── train.py
-│   ├── preprocess.py
-│   ├── inference.py
-│   ├── config.yaml
-│   └── checkpoints/
-├── Results/
-│   ├── English/
-│   └── Telugu/
-├── Report/
-│   └── Technical_Report.pdf
-├── README.md
-└── requirements.txt
-```
-
-## Current Experimental Progress
+## Implementation
 
 ### English
-- Dataset preprocessing and feature inspection completed.
-- FastSpeech 2 model loaded and tested using GPU.
-- Experimental training completed for 20 steps.
+- Dataset: Svarah
+- Text preprocessing and acoustic feature inspection completed.
+- FastSpeech 2 model loaded and tested on a GPU.
+- Experimental training performed for 20 steps.
 - Checkpoints saved at steps 10 and 20.
-- WAV inference generated successfully.
-- Generated speech is currently unintelligible and requires further training and evaluation.
+- One inference WAV and its spectrogram generated.
+- The generated audio was not intelligible and requires further training.
 
 ### Telugu
-- Telugu text vocabulary and tokenization tested.
-- Acoustic alignment and model training are not yet completed.
+- Dataset: IndicTTS Telugu.
+- Telugu Unicode vocabulary and text tokenization tested.
+- Acoustic alignment, model training and speech generation remain incomplete.
+
+## Repository Structure
+
+- `English/`: English training, preprocessing, inference and configuration.
+- `Telugu/`: Telugu implementation status.
+- `Results/`: Available experimental outputs.
+- `Report/`: Technical report.
+- Shared model implementation and utility modules are maintained at the repository root.
+
+## Experimental Configuration
+
+- Sample rate: 22050 Hz
+- Mel channels: 80
+- Batch size: 8
+- English training steps: 20
+- Checkpoints: Steps 10 and 20
+
+These are experimental settings, not evidence of a converged model.
+
+## Reproducibility
+
+The original datasets are not included in this repository. Obtain the permitted datasets separately and arrange them according to the paths in the configuration files before running preprocessing and training.
+
+The current checkpoints and audio are experimental artifacts. Further training, validation and speech-quality evaluation are necessary.
 
 ## Limitations
 
-The current English checkpoint is an experimental checkpoint and is not a converged model. Telugu acoustic alignment and training remain incomplete. Further training, validation, pronunciation evaluation, and variance-adaptor analysis are required.
+A complete bilingual TTS system has not yet been achieved. Telugu acoustic alignment and training are pending, and the current English generated audio is not intelligible.
 
-## Acknowledgements
+## Reference
 
-This project is based on the FastSpeech 2 research implementation by [ming024/FastSpeech2](https://github.com/ming024/FastSpeech2).
+Original implementation: https://github.com/ming024/FastSpeech2
 
-This repository documents the experimental implementation and progress of the assignment.
+
+## Dependencies
+
+- `requirements.txt` contains the original reference repository's dependency pins.
+- `requirements-original.txt` preserves the same original dependency list.
+- `requirements-kaggle-tested.txt` records package versions observed in the Kaggle experiment environment.
+
+The Kaggle environment used Python 3.13.16 and PyTorch 2.11.0 with CUDA 13.0. Some original dependencies were not installed or verified. The tested-environment file is a record of the experiment environment, not a guarantee that the complete project can be reproduced by installing that file alone.
